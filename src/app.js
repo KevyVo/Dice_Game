@@ -9,16 +9,10 @@ GAME RULES:
 
 */
 
-
+// initalize variables
 var scores, roundScore, activePlayer, gamePlaying, lastDice;
 
 init();
-//document.querySelector("#current-" + activePlayer).textContent = dice;
-
-//document.querySelector("#current-" + activePlayer).innerHTML = "<em>" + dice + "</em>";
-
-//var x = document.querySelector("#score-0").textContent;
-//console.log(x);
 
 document.querySelector(".btn-roll").addEventListener("click", function(){
     if (gamePlaying) {
@@ -28,42 +22,30 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
         //2. Display thr result
         document.getElementById('dice-1').style.display = 'block';
         document.getElementById('dice-2').style.display = 'block';
-        //https://dicegame.s3-us-west-2.amazonaws.com/dice-5.png
         document.getElementById('dice-1').src = 'https://dicegame.s3-us-west-2.amazonaws.com/dice-' + dice1 + '.png';
         document.getElementById('dice-2').src = 'https://dicegame.s3-us-west-2.amazonaws.com/dice-' + dice2 + '.png';
         //document.getElementById('dice-2').src = 'img/dice-' + dice2 + '.png';
-    //3. Update the round scorce IF the rolled number was NOT a 1
+        //3. Update the round scorce IF the rolled number was NOT a 1
         if (dice1 !==1 && dice2 !==1){
+            // Check if the numbers are not double 6, will reset all total points
+            if (dice1 === 6 && dice2 ===6){
+                scores[activePlayer] = 0;
+                document.querySelector("#score-" + activePlayer).textContent = scores[activePlayer];
+                nextPlayer();
+            }else{
             roundScore += dice1 + dice2;
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
+            }
         } else {
             nextPlayer();
         }
-
-        /* if (dice === 6 && lastDice === 6){
-            scores[activePlayer] = 0;
-            document.querySelector("#score-" + activePlayer).textContent = scores[activePlayer];
-            nextPlayer();
-        }
-        else if (dice !== 1) {
-            //Add score
-            roundScore += dice;
-            document.querySelector("#current-" + activePlayer).textContent = roundScore;
-        } else {
-            //Next Player
-            nextPlayer();
-            
-        }   
-
-        lastDice = dice;
-        */
     }
     
 });
 
 document.querySelector(".btn-hold").addEventListener("click", function() {
     if (gamePlaying) {
-            // Add CURRENT score to GLOBAL score
+        // Add CURRENT score to GLOBAL score
         scores[activePlayer] += roundScore;
         
         //Update the UI
@@ -96,6 +78,7 @@ document.querySelector(".btn-hold").addEventListener("click", function() {
 function nextPlayer() {
     activePlayer === 0 ? activePlayer =1 : activePlayer = 0;
         roundScore = 0;
+        //This is expanded version
         /* if(activePlayer ===0){
                     activePlayer = 1;
                 } else {
@@ -111,9 +94,11 @@ function nextPlayer() {
         document.getElementById('dice-2').style.display = 'none';
 }
 
+// When the new game button is press, it will call the init function
 document.querySelector(".btn-new").addEventListener("click", init);
 
 function init(){
+    // This function is used to setup all start variables
     scores = [0,0];
     activePlayer = 0;
     roundScore = 0;
@@ -129,6 +114,8 @@ function init(){
 
     document.getElementById("name-0").textContent = "Player 1";
     document.getElementById("name-1").textContent = "Player 2";
+
+    //Used to reset states of the players
     document.querySelector('.player-0-panel').classList.remove('winner');
     document.querySelector('.player-1-panel').classList.remove('winner');
     document.querySelector('.player-0-panel').classList.remove('active');
