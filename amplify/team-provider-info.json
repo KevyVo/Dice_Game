@@ -1,0 +1,23 @@
+{
+    "production": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-dicegame-production-153134-authRole",
+            "UnauthRoleArn": "arn:aws:iam::563221190312:role/amplify-dicegame-production-153134-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::563221190312:role/amplify-dicegame-production-153134-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "amplify-dicegame-production-153134-deployment",
+            "UnauthRoleName": "amplify-dicegame-production-153134-unauthRole",
+            "StackName": "amplify-dicegame-production-153134",
+            "StackId": "arn:aws:cloudformation:us-west-2:563221190312:stack/amplify-dicegame-production-153134/0f4cbe40-ed6c-11ea-b692-022002055f0c",
+            "AmplifyAppId": "d3j1ja2ged3oig"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d3j1ja2ged3oig",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}

@@ -28,8 +28,10 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
         //2. Display thr result
         document.getElementById('dice-1').style.display = 'block';
         document.getElementById('dice-2').style.display = 'block';
-        document.getElementById('dice-1').src = 'dice-' + dice1 + '.png';
-        document.getElementById('dice-2').src = 'dice-' + dice2 + '.png';
+        //https://dicegame.s3-us-west-2.amazonaws.com/dice-5.png
+        document.getElementById('dice-1').src = 'https://dicegame.s3-us-west-2.amazonaws.com/dice-' + dice1 + '.png';
+        document.getElementById('dice-2').src = 'https://dicegame.s3-us-west-2.amazonaws.com/dice-' + dice2 + '.png';
+        //document.getElementById('dice-2').src = 'img/dice-' + dice2 + '.png';
     //3. Update the round scorce IF the rolled number was NOT a 1
         if (dice1 !==1 && dice2 !==1){
             roundScore += dice1 + dice2;
