@@ -126,7 +126,7 @@ function init(){
     activePlayer = 0;
     roundScore = 0;
     gamePlaying = true;
-
+    //Used to reset penatly from 
     document.querySelector("#label-0").textContent = "";
     document.querySelector("#label-1").textContent = "";
 
