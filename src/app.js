@@ -42,7 +42,6 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
                 scores[activePlayer] = 0;
                 document.querySelector("#score-" + activePlayer).textContent = scores[activePlayer];
                 document.querySelector("#label-" + activePlayer).textContent = "You have rolled double 6`s, your total points will be reset!";
-                nextPlayer();
             }else{
             // .7 No penalty are found then the player will reroll.
                 roundScore += dice1 + dice2;
