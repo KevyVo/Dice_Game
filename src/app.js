@@ -28,14 +28,14 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
         //3. Update the round scorce IF the rolled number was NOT a 1
         if (dice1 !==1 && dice2 !==1){
             // Check if the numbers are not double 6, will reset all total points
-            if (dice1 === 6 && dice2 ===6){
+            if (dice1 === 6 && dice2 === 6){
                 scores[activePlayer] = 0;
                 document.querySelector("#score-" + activePlayer).textContent = scores[activePlayer];
                 nextPlayer();
             }else{
-            roundScore += dice1 + dice2;
-            document.querySelector('#current-' + activePlayer).textContent = roundScore;
-            }
+                roundScore += dice1 + dice2;
+                document.querySelector('#current-' + activePlayer).textContent = roundScore;
+                }
         } else {
             nextPlayer();
         }
@@ -90,8 +90,8 @@ function nextPlayer() {
         document.querySelector(".player-0-panel").classList.toggle("active");
         document.querySelector(".player-1-panel").classList.toggle("active");
 
-        document.getElementById('dice-1').style.display = 'none';
-        document.getElementById('dice-2').style.display = 'none';
+        //document.getElementById('dice-1').style.display = 'none';
+        //document.getElementById('dice-2').style.display = 'none';
 }
 
 // When the new game button is press, it will call the init function
