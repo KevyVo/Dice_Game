@@ -33,8 +33,8 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
             roundScore += dice1 + dice2;
             calulateTotal();
         // 5. Skip turn if only 1 is roll from either dices
-        } else if (dice1 == 1 || dice2 == 1){
-            document.querySelector("#label-" + activePlayer).textContent = "You have rolled a 1, your turn will be skipped!";
+        } else if (dice1 == 3 && dice2 == 3){
+            document.querySelector("#label-" + activePlayer).textContent = "You have rolled double 3`s, your turn will be skipped!";
             nextPlayer();
         }else {
             // 6. Check if the numbers are not double 6, will reset all total points
