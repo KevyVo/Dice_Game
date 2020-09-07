@@ -49,12 +49,6 @@
             overflow: hidden;
         }
 
-        .clearfix::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
         body {
             background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(https://dicegame.s3-us-west-2.amazonaws.com/back.jpg);
             background-size: cover;
@@ -67,7 +61,7 @@
         }
 
         .wrapper {
-            height: 500px;
+            height: 550px;
             width: 1050px;
             position: absolute;
             top: 50%;
@@ -109,12 +103,13 @@
         <h1>Rules</h1>
         <ul>
             <li>- The game has 2 players, playing in rounds</li>
-            <li>- In each turn, a player rolls a dice as many times as they wishes. Each roll`s result get added to his ROUND score</li>
-            <li>- If the player rolls a 1, all their ROUND score gets added to their TOTAL score. After that, it's the next player's turn</li>
+            <li>- In each turn, a player rolls a dice as many times as they wish. Each roll`s result get added to their ROUND score</li>
+            <li>- If the player rolls a double 1`s, all their ROUND score gets added to their TOTAL score. After that, it's the next player's turn</li>
             <li>- If the player rolls double 3`s, their ROUND score will be reset and it`s the next player`s turn</li>
             <li>- If the player tolls a double 6`s their ROUND and TOTAL will be reset to zero.</li>
             <li>- The player can choose to 'Hold', which means that his ROUND score gets added to his GLOBAL score. After that, it's the next player's turn</li>
-            <li>- You chnage the FINAL SCORE by entering a new value into the textbox or you can leave it empty, which default it 100 points</li>
+            <li>- You change the FINAL SCORE by entering a new value into the textbox or you can leave it empty, which default it to 100 points</li>
+            <li>- First player to the FINAL SCORE wins the dice game, have fun!</li>
         </ul>
         <a href="index.html"><button class="rules">Back to Game</button></a>
     </div>
